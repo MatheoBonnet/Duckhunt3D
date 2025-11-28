@@ -8,10 +8,12 @@ public class Player : MonoBehaviour
     float verticalInput;    
     public Transform orientation;
     Vector3 moveDirection;
+    float groundDrag = 5f;
+
     Rigidbody rb;
 
     public float jumpForce = 5f;
-    public bool canJump = false;
+    public bool grounded = false;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -34,12 +36,20 @@ public class Player : MonoBehaviour
         transform.rotation = orientation.rotation;
 
         // saut
-        if (Input.GetKey(KeyCode.Space) && canJump)
+        if (Input.GetKey(KeyCode.Space) && grounded)
         {
-            GetComponent<Rigidbody>().linearVelocity = Vector3.up * jumpForce;
-            canJump = false;
+            rb.linearVelocity = Vector3.up * jumpForce;
+            grounded = false;
         }
 
+        // ralentit au sol (pour ne pas "glisser")
+        if (grounded) {
+            rb.linearDamping = groundDrag;
+        }
+        else
+        {
+            rb.linearDamping = 0;
+        }
 
     }
 
@@ -66,7 +76,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
-            canJump = true;
+            grounded = true;
         }
     }
 }
