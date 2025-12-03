@@ -8,6 +8,7 @@ public class CameraMovment : MonoBehaviour
 
     public float sens;
     public Transform orientation;
+    public Transform aimingDirection;
     float xRotation;
     float yRotation;
 
@@ -30,6 +31,7 @@ public class CameraMovment : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+        aimingDirection.rotation = Quaternion.Euler(xRotation, yRotation, 0);
 
 
 
