@@ -7,23 +7,30 @@ public class TriggerChest : MonoBehaviour
 {
     [SerializeField] public PlayableDirector LootboxTimeline;
 
-    [SerializeField] public List<GameObject> itemsList;
+    public List<GameObject> itemsList;
+    public GameObject items;
     public float interval = 0.3f;
 
     void Start()
     {
-        foreach (var item in itemsList) item.SetActive(false);
+        for(int i=0; i < items.transform.childCount; i++)
+        {
+            GameObject item = items.transform.GetChild(i).gameObject;
+            itemsList.Add(item);
+            Debug.Log(item);
+            item.SetActive(false);
+            item.GetComponent<CollectItem>().collectable = false;
+        }
     }
 
     void OnTriggerStay(Collider coll)
     {
         if (coll.CompareTag("Player"))
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("Lancement Timeline");
                 LootboxTimeline.Play();
-
                 ChooseRandomItem();
                 Debug.Log("choisi");
 
@@ -35,16 +42,16 @@ public class TriggerChest : MonoBehaviour
 
     public void ChooseRandomItem(){
         
-    Debug.Log("Activé");
-        
+        Debug.Log("Activé");
+            
 
-    if (itemsList == null || itemsList.Count == 0)
-    {
-        Debug.LogWarning("itemsList est vide !");
-        return;
-    }
+        if (itemsList == null || itemsList.Count == 0)
+        {
+            Debug.LogWarning("itemsList est vide !");
+            return;
+        }
 
-        int choosedIndex = Random.Range(0,itemsList.Count-1);
+        int choosedIndex = Random.Range(0,itemsList.Count);
         // GameObject choosedItem = itemsList[choosedIndex];
 
         StartCoroutine(defilerItems(choosedIndex));
@@ -62,12 +69,16 @@ public class TriggerChest : MonoBehaviour
         for (int i = 0; i < 20; i++)
         {
             itemsList[i%itemsList.Count].SetActive(true);
+            Debug.Log(i%itemsList.Count);
             yield return new WaitForSeconds(interval);
             itemsList[i%itemsList.Count].SetActive(false);
         }
 
         // affiche le gagnant
-        itemsList[choosedIndex].SetActive(true);
-        Debug.Log("Gagnant : " + choosedIndex);
+        
+        GameObject choosedItem = Instantiate(itemsList[choosedIndex], itemsList[choosedIndex].transform.position, itemsList[choosedIndex].transform.rotation);
+        choosedItem.SetActive(true);
+        choosedItem.GetComponent<CollectItem>().collectable = true;
+        Debug.Log("Gagnant : " + choosedItem);
     }
 }

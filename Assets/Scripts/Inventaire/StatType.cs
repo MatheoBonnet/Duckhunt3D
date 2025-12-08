@@ -5,10 +5,12 @@ public enum StatType
     damage,
     firingSpeed,
     speed, // test
+    money,
     
     
     // autres stats (canards,...)
     spawnInterval, 
-    size, 
-    reward // score que donne un canard
+    duckSize, 
+    duckReward, // score que donne un canard
+    duckHealth
 }

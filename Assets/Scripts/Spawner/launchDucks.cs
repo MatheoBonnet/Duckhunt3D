@@ -13,7 +13,7 @@ public class launchDucks : MonoBehaviour
         {
             // Debug.Log(gameObject.transform.GetChild(i));
             spawnersList.Add(gameObject.transform.GetChild(i).gameObject);
-            Debug.Log(gameObject.transform.GetChild(i).gameObject);
+            // Debug.Log(gameObject.transform.GetChild(i).gameObject);
         }
 
         StartCoroutine(launchRandom());

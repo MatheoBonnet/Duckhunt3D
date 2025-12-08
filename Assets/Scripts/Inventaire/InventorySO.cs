@@ -30,4 +30,7 @@ public class InventorySO : ScriptableObject
     {
         itemsPossedes.Add(item);
     }
+    public void removeItem(ItemData item) { 
+        itemsPossedes.Remove(item); 
+    }
 }

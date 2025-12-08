@@ -12,7 +12,6 @@ public struct StatModifier
 public class ItemData : ScriptableObject
 {
     public string nomItem;
-    public GameObject itemObject;
     [TextArea] public string description;
 
     // Liste des effets (Un item peut donner de la force ET de la vitesse)
