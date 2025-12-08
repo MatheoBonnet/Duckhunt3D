@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     float horizontalInput;
     float verticalInput;    
     public Transform orientation;
+    [SerializeField]
+    private tir shooter;
     Vector3 moveDirection;
     float groundDrag = 5f;
 
@@ -23,6 +25,13 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
+        // try to auto-assign shooter if not set in Inspector
+        if (shooter == null)
+        {
+            shooter = GetComponentInChildren<tir>();
+            if (shooter == null)
+                shooter = FindObjectOfType<tir>();
+        }
     }
 
     // Update is called once per frame
@@ -49,6 +58,19 @@ public class Player : MonoBehaviour
         else
         {
             rb.linearDamping = 0;
+        }
+
+        // left click to shoot
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (shooter != null)
+            {
+                shooter.Shoot();
+            }
+            else
+            {
+                Debug.LogWarning("Player: shooter (tir) is not assigned.");
+            }
         }
 
     }
