@@ -48,6 +48,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.61f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Assets\Scripts\LootBox\GizmoBox.cs" />
     <Compile Include="Assets\Scripts\spawner.cs" />
     <Compile Include="Assets\tir.cs" />
@@ -66,6 +67,20 @@
     <None Include="Assets\Vefects\Trails VFX URP\VFX\Shaders\SH_Vefects_VFX_URP_Trail_New.shader" />
     <None Include="Assets\Vefects\Trails VFX URP\Demo\Resources\Environment\Shaders\SH_Vefects_Grid_01.shader" />
     <None Include="Assets\Vefects\Trails VFX URP\_ Extra\Shaders\SH_Vefects_Extra_Grid_01.shader" />
+=======
+    <Compile Include="Assets/Scripts/LootBox/GizmoBox.cs" />
+    <Compile Include="Assets/Scripts/Inventaire/InventorySO.cs" />
+    <Compile Include="Assets/Scripts/Inventaire/ItemData.cs" />
+    <Compile Include="Assets/Scripts/Inventaire/CollectItem.cs" />
+    <Compile Include="Assets/Scripts/testvisee.cs" />
+    <Compile Include="Assets/Scripts/LootBox/RandomObject.cs" />
+    <Compile Include="Assets/Scripts/Inventaire/StatType.cs" />
+    <Compile Include="Assets/Scripts/Spawner/Spawner.cs" />
+    <Compile Include="Assets/Scripts/Player/Player.cs" />
+    <Compile Include="Assets/Scripts/LootBox/TriggerChest.cs" />
+    <Compile Include="Assets/Scripts/Player/cameraRotation.cs" />
+    <Compile Include="Assets/Scripts/Spawner/launchDucks.cs" />
+>>>>>>> ed22b7b87d9a8491041d7610c16480f187f3db23
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
