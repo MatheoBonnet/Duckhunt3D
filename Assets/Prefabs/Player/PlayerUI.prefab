@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: score
+  m_Text: 'Score : 0'
 --- !u!1 &5247841096679918689
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: max score
+  m_Text: 'Max score : 0'
 --- !u!1 &6604642862624174570
 GameObject:
   m_ObjectHideFlags: 0

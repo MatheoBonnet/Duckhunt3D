@@ -44,4 +44,12 @@ public class DuckController : MonoBehaviour
     {
         currentHealth -= damage;
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
