@@ -81,8 +81,11 @@
 //     }
 // }
 
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -101,6 +104,11 @@ public class Player : MonoBehaviour
     public float baseShootDelay = 0.5f;
     public float bonusShootDelay, realShootDelay;
 
+    public float score, maxScore;
+    public Canvas playerUI;
+    private Text scoreUI;
+    private Text maxScoreUI;
+
     private tir shooter;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -118,6 +126,14 @@ public class Player : MonoBehaviour
             if (shooter == null)
                 shooter = FindFirstObjectByType<tir>();
         }
+
+        score = 0f;
+        Debug.Log(gameObject);
+
+        // Text scoreUI = playerUI.transform.GetChild(1).GameObject.GetComponent;
+        Text[] texts = playerUI.GetComponentsInChildren<Text>();
+        scoreUI = texts[0];
+        maxScoreUI = texts[1];
     }
 
     // Update is called once per frame
@@ -171,6 +187,12 @@ public class Player : MonoBehaviour
             }
         }
 
+        if (score > maxScore)
+        {
+            maxScore = score;
+        }
+        scoreUI.text = "Score : " + score.ToString();
+        maxScoreUI.text = "Max score : " + maxScore.ToString();
     }
 
     void updateStats()
