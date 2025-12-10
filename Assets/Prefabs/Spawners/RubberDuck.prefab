@@ -66,7 +66,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0c797db323e5483528ec97d8f3763081, type: 3}
       propertyPath: m_Name
-      value: RubberDuck 1
+      value: RubberDuck
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0c797db323e5483528ec97d8f3763081, type: 3}
+      propertyPath: m_TagString
+      value: Duck
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -148,5 +152,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSize: 0
-  baseHealth: 0
+  baseMaxHealth: 10
+  currentHealth: 0
   inventory: {fileID: 11400000, guid: d26606e1860db3ab2a68bc577af87d51, type: 2}

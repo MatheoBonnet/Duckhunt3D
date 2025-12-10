@@ -97,6 +97,11 @@ public class Player : MonoBehaviour
 
 
     public InventorySO inventaire;
+    public float baseDamage, bonusDamage, realDamage;
+    public float baseShootDelay = 0.5f;
+    public float bonusShootDelay, realShootDelay;
+
+    private tir shooter;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -105,6 +110,14 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
+
+        // try to auto-assign shooter if not set in Inspector
+        if (shooter == null)
+        {
+            shooter = GetComponentInChildren<tir>();
+            if (shooter == null)
+                shooter = FindFirstObjectByType<tir>();
+        }
     }
 
     // Update is called once per frame
@@ -139,6 +152,23 @@ public class Player : MonoBehaviour
         {
             rb.linearVelocity = Vector3.up * jumpForce;
             grounded = false;
+        }
+
+        // left click to shoot
+        bonusDamage = inventaire.GetBonusTotal(StatType.damage);
+        bonusShootDelay = inventaire.GetBonusTotal(StatType.shootDelay);
+        realDamage = baseDamage + bonusDamage;
+        realShootDelay = baseShootDelay + bonusShootDelay;
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (shooter != null)
+            {
+                shooter.Shoot(realDamage, realShootDelay);
+            }
+            else
+            {
+                Debug.LogWarning("Player: shooter (tir) is not assigned.");
+            }
         }
 
     }

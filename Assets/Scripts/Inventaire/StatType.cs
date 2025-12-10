@@ -3,7 +3,7 @@ public enum StatType
 {
     // stats du joueur
     damage,
-    firingSpeed,
+    shootDelay, // delai entre les tirs du joueur
     speed, // test
     money,
     

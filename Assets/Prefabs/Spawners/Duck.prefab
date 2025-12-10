@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 2336498177953017560}
   m_Layer: 0
   m_Name: Duck
-  m_TagString: Untagged
+  m_TagString: Duck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -372,5 +372,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSize: 0
-  baseHealth: 0
+  baseMaxHealth: 20
+  currentHealth: 0
   inventory: {fileID: 11400000, guid: d26606e1860db3ab2a68bc577af87d51, type: 2}

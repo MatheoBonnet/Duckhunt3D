@@ -17,7 +17,6 @@ public class TriggerChest : MonoBehaviour
         {
             GameObject item = items.transform.GetChild(i).gameObject;
             itemsList.Add(item);
-            Debug.Log(item);
             item.SetActive(false);
             item.GetComponent<CollectItem>().collectable = false;
         }
