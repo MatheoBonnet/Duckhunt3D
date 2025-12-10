@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8322378647644347724, guid: 68367f848baddc146b2274bb58e9c8b4, type: 3}
       propertyPath: m_Name
-      value: DuckSizeUpgradeObject 1
+      value: DuckSizeUpgradeObject
       objectReference: {fileID: 0}
     - target: {fileID: 8661785365538097142, guid: 68367f848baddc146b2274bb58e9c8b4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8661785365538097142, guid: 68367f848baddc146b2274bb58e9c8b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8661785365538097142, guid: 68367f848baddc146b2274bb58e9c8b4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -90,6 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventaire: {fileID: 11400000, guid: d26606e1860db3ab2a68bc577af87d51, type: 2}
   item: {fileID: 11400000, guid: 5e2cc2a4402d9775aaab4b5c4da4d81d, type: 2}
+  collectable: 1
 --- !u!65 &4332026633249935283
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -165,7 +165,7 @@ Transform:
   m_GameObject: {fileID: 957694372886349142}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.37, y: 0.5, z: 2.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -194,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventaire: {fileID: 11400000, guid: d26606e1860db3ab2a68bc577af87d51, type: 2}
   item: {fileID: 11400000, guid: da8f14413e132788ca05e28a4679b832, type: 2}
+  collectable: 1
 --- !u!65 &6771274764143154360
 BoxCollider:
   m_ObjectHideFlags: 0
