@@ -36,6 +36,7 @@ public class DuckController : MonoBehaviour
         if (currentHealth <= 0)
         {
             // player.GetComponent<Player>().score += realReward;
+            Player.updateScore(realReward);
             Destroy(gameObject);
         }
     }

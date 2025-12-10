@@ -104,10 +104,10 @@ public class Player : MonoBehaviour
     public float baseShootDelay = 0.5f;
     public float bonusShootDelay, realShootDelay;
 
-    public float score, maxScore;
+    public static float score, maxScore;
     public Canvas playerUI;
-    private Text scoreUI;
-    private Text maxScoreUI;
+    private static Text scoreUI;
+    private static Text maxScoreUI;
 
     private tir shooter;
 
@@ -187,17 +187,23 @@ public class Player : MonoBehaviour
             }
         }
 
+        
+    }
+
+    void updateStats()
+    {
+        
+    }
+
+    public static void updateScore (float nb)
+    {
+        score += nb;
         if (score > maxScore)
         {
             maxScore = score;
         }
         scoreUI.text = "Score : " + score.ToString();
         maxScoreUI.text = "Max score : " + maxScore.ToString();
-    }
-
-    void updateStats()
-    {
-        
     }
     void OnCollisionEnter(Collision collision)
     {
