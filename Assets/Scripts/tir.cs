@@ -12,10 +12,6 @@ public class tir : MonoBehaviour
     [SerializeField]
     private TrailRenderer BulletTrail;
     [SerializeField]
-    private float shoodDelay = 0.5f;
-    [SerializeField]
-    private float bulletSpeed = 50f;
-    [SerializeField]
     private LayerMask Mask;
     [SerializeField]
     private float maxDistance = 100f;
@@ -102,12 +98,7 @@ public class tir : MonoBehaviour
             TrailRenderer trail = Instantiate(BulletTrail, origin, Quaternion.identity);
             StartCoroutine(SpawnTrail(trail, targetPoint, didHit, hitNormal, hitObject));
         }
-        else
-        {
-            // if no trail, still spawn impact particle if hit
-            if (didHit && ImpactParticule != null)
-                Instantiate(ImpactParticule, targetPoint, Quaternion.LookRotation(hitNormal));
-        }
+
     }
 
     private IEnumerator SpawnTrail(TrailRenderer trail, Vector3 targetPoint, bool didHit, Vector3 hitNormal, GameObject hitObject)
@@ -124,7 +115,7 @@ public class tir : MonoBehaviour
 
         trail.transform.position = targetPoint;
 
-        if (didHit && ImpactParticule != null)
+        if (didHit && ImpactParticule != null && hitObject != null && hitObject.tag == "Duck")
             Instantiate(ImpactParticule, targetPoint, Quaternion.LookRotation(hitNormal));
 
         Destroy(trail.gameObject, trail.time);

@@ -1970,9 +1970,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d26606e1860db3ab2a68bc577af87d51, type: 2}
     - target: {fileID: 3850446096805042940, guid: def9c197510d65f48b7c48638c428f7f, type: 3}
+      propertyPath: BulletTrail
+      value: 
+      objectReference: {fileID: -7550858979441139717, guid: f6bbcfa7e746d0340bd78dd22f35b3b3, type: 3}
+    - target: {fileID: 3850446096805042940, guid: def9c197510d65f48b7c48638c428f7f, type: 3}
       propertyPath: Mask.m_Bits
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3850446096805042940, guid: def9c197510d65f48b7c48638c428f7f, type: 3}
+      propertyPath: ImpactParticule
+      value: 
+      objectReference: {fileID: 198000011143922816, guid: e5a3d6da48298a0458c1990f58c27069, type: 3}
     - target: {fileID: 8119460171195419152, guid: def9c197510d65f48b7c48638c428f7f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
