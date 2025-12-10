@@ -33,4 +33,11 @@ public class InventorySO : ScriptableObject
     public void removeItem(ItemData item) { 
         itemsPossedes.Remove(item); 
     }
+    public void clearInventory()
+    {
+        foreach (var item in itemsPossedes)
+        {
+            removeItem(item);
+        }
+    }
 }

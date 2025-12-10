@@ -4,9 +4,12 @@ public class DuckController : MonoBehaviour
 {
     public float baseSize;
     public int baseMaxHealth = 10;
-    public float currentHealth;
+    private float currentHealth;
 
     private float bonusHealth, bonusSize, realMaxHealth, realSize;
+
+    public float baseReward;
+    private float bonusReward, realReward;
 
 
     public InventorySO inventory;
@@ -15,10 +18,16 @@ public class DuckController : MonoBehaviour
     void Start()
     {
         currentHealth = baseMaxHealth;
-        bonusSize = inventory.GetBonusTotal(StatType.duckSize);
+
         bonusHealth = inventory.GetBonusTotal(StatType.duckHealth);
         realMaxHealth = baseMaxHealth + bonusHealth;
+
+        bonusSize = inventory.GetBonusTotal(StatType.duckSize);
         transform.localScale += new Vector3(bonusSize, bonusSize, bonusSize);
+
+        bonusReward = inventory.GetBonusTotal(StatType.duckReward);
+        realReward = baseReward + bonusReward;
+        
     }
 
     // Update is called once per frame
@@ -26,6 +35,7 @@ public class DuckController : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            // player.GetComponent<Player>().score += realReward;
             Destroy(gameObject);
         }
     }

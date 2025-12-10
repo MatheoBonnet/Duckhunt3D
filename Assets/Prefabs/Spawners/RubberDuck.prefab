@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2877053235885398566
+--- !u!1001 &6478936668620619079
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0c797db323e5483528ec97d8f3763081, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.695445
+      value: 2.005002
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0c797db323e5483528ec97d8f3763081, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.32
+      value: 1.3661101
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0c797db323e5483528ec97d8f3763081, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.3101583
+      value: 1.0771124
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0c797db323e5483528ec97d8f3763081, type: 3}
       propertyPath: m_LocalRotation.w
@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0c797db323e5483528ec97d8f3763081, type: 3}
       propertyPath: m_Name
-      value: RubberDuck
+      value: RubberDuck 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0c797db323e5483528ec97d8f3763081, type: 3}
       propertyPath: m_TagString
@@ -78,26 +78,26 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0c797db323e5483528ec97d8f3763081, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3338471919999396843}
+      addedObject: {fileID: 8024652940703455993}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0c797db323e5483528ec97d8f3763081, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1649087818260426449}
+      addedObject: {fileID: 5191291427262311853}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0c797db323e5483528ec97d8f3763081, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2386311335247476543}
+      addedObject: {fileID: 7062424782143484096}
   m_SourcePrefab: {fileID: 100100000, guid: 0c797db323e5483528ec97d8f3763081, type: 3}
---- !u!1 &3110915857037617015 stripped
+--- !u!1 &6136338400030965782 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0c797db323e5483528ec97d8f3763081, type: 3}
-  m_PrefabInstance: {fileID: 2877053235885398566}
+  m_PrefabInstance: {fileID: 6478936668620619079}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &3338471919999396843
+--- !u!54 &8024652940703455993
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3110915857037617015}
+  m_GameObject: {fileID: 6136338400030965782}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -118,13 +118,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &1649087818260426449
+--- !u!65 &5191291427262311853
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3110915857037617015}
+  m_GameObject: {fileID: 6136338400030965782}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -139,19 +139,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0018957534, y: 0.0011125993, z: 0.001714692}
   m_Center: {x: 0.00017321497, y: 0.000000018422723, z: -0.000008763948}
---- !u!114 &2386311335247476543
+--- !u!114 &7062424782143484096
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3110915857037617015}
+  m_GameObject: {fileID: 6136338400030965782}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 526c2c79fab1347a3846aa4db8bfd4ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   baseSize: 0
   baseMaxHealth: 10
-  currentHealth: 0
+  baseReward: 5
   inventory: {fileID: 11400000, guid: d26606e1860db3ab2a68bc577af87d51, type: 2}
