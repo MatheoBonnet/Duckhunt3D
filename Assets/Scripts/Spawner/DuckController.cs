@@ -44,6 +44,7 @@ public class DuckController : MonoBehaviour
             Player.updateScore(realScoreReward);
             Player.addMoney(realMoneyReward);
             Destroy(gameObject);
+            
         }
     }
 
