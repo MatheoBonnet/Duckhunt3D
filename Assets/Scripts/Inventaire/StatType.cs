@@ -11,6 +11,7 @@ public enum StatType
     // autres stats (canards,...)
     spawnInterval, 
     duckSize, 
-    duckReward, // score que donne un canard
+    duckScoreReward, // score que donne un canard
+    duckMoneyReward,
     duckHealth
 }

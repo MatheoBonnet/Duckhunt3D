@@ -223,6 +223,7 @@ public class Player : MonoBehaviour
     {
         money -= amount;
     }
+    
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Ground")
