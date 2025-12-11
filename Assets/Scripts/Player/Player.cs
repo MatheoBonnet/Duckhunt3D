@@ -105,9 +105,11 @@ public class Player : MonoBehaviour
     public float bonusShootDelay, realShootDelay;
 
     public static float score, maxScore;
+    public static float money = 10f;
     public Canvas playerUI;
     private static Text scoreUI;
     private static Text maxScoreUI;
+    private Text moneyUI;
 
     private tir shooter;
 
@@ -134,6 +136,7 @@ public class Player : MonoBehaviour
         Text[] texts = playerUI.GetComponentsInChildren<Text>();
         scoreUI = texts[0];
         maxScoreUI = texts[1];
+        moneyUI = texts[2];
     }
 
     // Update is called once per frame
@@ -187,7 +190,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        
+         moneyUI.text = "Money : " + money.ToString();
     }
 
     void updateStats()
@@ -204,6 +207,21 @@ public class Player : MonoBehaviour
         }
         scoreUI.text = "Score : " + score.ToString();
         maxScoreUI.text = "Max score : " + maxScore.ToString();
+    }
+
+    public static float getMoney()
+    {
+        return money;
+    }
+
+    public static void addMoney(float amount)
+    {
+        money += amount;
+    }
+
+    public static void removeMoney(float amount)
+    {
+        money -= amount;
     }
     void OnCollisionEnter(Collision collision)
     {

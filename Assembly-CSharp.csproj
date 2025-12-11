@@ -48,7 +48,6 @@
     <Analyzer Include="/home/matheo/Unity/Hub/Editor/6000.0.61f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Scripts/LootBox/GizmoBox.cs" />
     <Compile Include="Assets/UnityTechnologies/ParticlePack/Shared/Scripts/ExtinguishableFire.cs" />
     <Compile Include="Assets/UnityTechnologies/ParticlePack/Shared/Scripts/ParticleExamples.cs" />
     <Compile Include="Assets/Scripts/Inventaire/InventorySO.cs" />

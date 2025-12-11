@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using System.Collections.Generic;
 using System.Collections; 
+using UnityEngine.UI;
 
 public class TriggerChest : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class TriggerChest : MonoBehaviour
     public List<GameObject> itemsList;
     public GameObject items;
     public float interval = 0.3f;
+
+    public float price = 10;
+    public Canvas priceUICanvas;
+    private Text priceUI;
 
     void Start()
     {
@@ -20,19 +25,27 @@ public class TriggerChest : MonoBehaviour
             item.SetActive(false);
             item.GetComponent<CollectItem>().collectable = false;
         }
+
+        // ui
+        Text[] texts = priceUICanvas.GetComponentsInChildren<Text>();
+        priceUI = texts[0];
+    }
+
+    void Update()
+    {
+        priceUI.text = "Prix : " + price.ToString();
     }
 
     void OnTriggerStay(Collider coll)
     {
         if (coll.CompareTag("Player"))
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && Player.getMoney() >= price)
             {
+                Player.removeMoney(price);
                 Debug.Log("Lancement Timeline");
                 LootboxTimeline.Play();
                 ChooseRandomItem();
-                Debug.Log("choisi");
-
             }
             
         }
