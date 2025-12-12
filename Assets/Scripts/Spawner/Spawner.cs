@@ -22,9 +22,16 @@ public class Spawner : MonoBehaviour
 
     public void launch()
     {
-        Quaternion rotation = Quaternion.identity;
+        int xForce = Random.Range(100,300);
+        int direction = Random.Range(0,2);
+        Debug.Log(direction);
+        if(direction == 0)
+        {
+            xForce = -xForce;
+        }
+        Quaternion rotation = Quaternion.Euler(-90,-90,0);
         // Quaternion rotation = transform.rotation;
         GameObject duckInstance = Instantiate(duck, transform.position + new Vector3(0,2,0), rotation);
-        duckInstance.GetComponent<Rigidbody>().AddForce(new Vector3(0, 1000, 0));
+        duckInstance.GetComponent<Rigidbody>().AddForce(new Vector3(xForce, 1000, 0));
     }
 }
