@@ -3566,7 +3566,7 @@ PrefabInstance:
     - target: {fileID: 4792180291583520583, guid: ffe7c6f9b855c056ba2032935b1d14cf, type: 3}
       propertyPath: BulletLine
       value: 
-      objectReference: {fileID: 4359737787654305285, guid: ae6bdf3417a5d6047a559654858dac31, type: 3}
+      objectReference: {fileID: 9121759435797174180, guid: f6bbcfa7e746d0340bd78dd22f35b3b3, type: 3}
     - target: {fileID: 4792180291583520583, guid: ffe7c6f9b855c056ba2032935b1d14cf, type: 3}
       propertyPath: ShootingSystem
       value: 
