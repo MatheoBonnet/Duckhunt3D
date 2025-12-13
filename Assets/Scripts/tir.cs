@@ -10,7 +10,11 @@ public class tir : MonoBehaviour
     [SerializeField]
     private ParticleSystem ShootingSystem;
     [SerializeField]
-    private TrailRenderer BulletTrail;
+    private LineRenderer BulletLine;
+    [SerializeField]
+    private float lineTravelTime = 0.05f; // time to reach target
+    [SerializeField]
+    private float lineLifeTime = 0.1f;    // time to keep line after hit
     [SerializeField]
     private LayerMask Mask;
     [SerializeField]
@@ -39,8 +43,7 @@ public class tir : MonoBehaviour
 
         lastShootTime = Time.time;
 
-        if (ShootingSystem != null)
-            ShootingSystem.Play();
+        
 
         Vector3 origin = spawnPoint != null ? spawnPoint.position : transform.position;
 
@@ -93,31 +96,39 @@ public class tir : MonoBehaviour
 
     private void SpawnShot(Vector3 origin, Vector3 targetPoint, bool didHit, Vector3 hitNormal, GameObject hitObject)
     {
-        if (BulletTrail != null)
+        if (ShootingSystem != null)
+            Instantiate(ShootingSystem, origin, Quaternion.identity);
+        if (BulletLine != null)
         {
-            TrailRenderer trail = Instantiate(BulletTrail, origin, Quaternion.identity);
-            StartCoroutine(SpawnTrail(trail, targetPoint, didHit, hitNormal, hitObject));
+            LineRenderer line = Instantiate(BulletLine, origin, Quaternion.identity);
+            StartCoroutine(SpawnLine(line, origin, targetPoint, didHit, hitNormal, hitObject));
         }
 
     }
 
-    private IEnumerator SpawnTrail(TrailRenderer trail, Vector3 targetPoint, bool didHit, Vector3 hitNormal, GameObject hitObject)
+    private IEnumerator SpawnLine(LineRenderer line, Vector3 origin, Vector3 targetPoint, bool didHit, Vector3 hitNormal, GameObject hitObject)
     {
         float time = 0f;
-        Vector3 startPosition = trail.transform.position;
+        Vector3 startPosition = origin;
+
+        line.positionCount = 2;
+        line.SetPosition(0, startPosition);
+        line.SetPosition(1, startPosition);
 
         while (time < 1f)
         {
-            trail.transform.position = Vector3.Lerp(startPosition, targetPoint, time);
-            time += Time.deltaTime / Mathf.Max(0.0001f, trail.time);
+            Vector3 current = Vector3.Lerp(startPosition, targetPoint, time);
+            line.SetPosition(1, current);
+            time += Time.deltaTime / Mathf.Max(0.0001f, lineTravelTime);
             yield return null;
         }
 
-        trail.transform.position = targetPoint;
+        line.SetPosition(1, targetPoint);
 
         if (didHit && ImpactParticule != null && hitObject != null && hitObject.tag == "Duck")
             Instantiate(ImpactParticule, targetPoint, Quaternion.LookRotation(hitNormal));
 
-        Destroy(trail.gameObject, trail.time);
+        yield return new WaitForSeconds(lineLifeTime);
+        Destroy(line.gameObject);
     }
 }

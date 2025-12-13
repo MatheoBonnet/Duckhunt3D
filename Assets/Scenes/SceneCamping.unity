@@ -3563,6 +3563,14 @@ PrefabInstance:
       propertyPath: playerUI
       value: 
       objectReference: {fileID: 1412477428}
+    - target: {fileID: 4792180291583520583, guid: ffe7c6f9b855c056ba2032935b1d14cf, type: 3}
+      propertyPath: BulletLine
+      value: 
+      objectReference: {fileID: 9121759435797174180, guid: f6bbcfa7e746d0340bd78dd22f35b3b3, type: 3}
+    - target: {fileID: 4792180291583520583, guid: ffe7c6f9b855c056ba2032935b1d14cf, type: 3}
+      propertyPath: ShootingSystem
+      value: 
+      objectReference: {fileID: 198000012942003240, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 3}
     - target: {fileID: 6960611233032741563, guid: ffe7c6f9b855c056ba2032935b1d14cf, type: 3}
       propertyPath: m_Name
       value: PlayerObject
