@@ -4,9 +4,8 @@ using UnityEngine.UI;
 public class Game : MonoBehaviour
 {
     public float time = 5f;
-    int round = 0;
-    int score_needed = 20;
-    bool phase_jeu = true;
+    int round = 1;
+    int score_needed = 0;
     
     public Text timeUI; 
     public Text roundUI; 
@@ -50,11 +49,17 @@ public class Game : MonoBehaviour
         }
         else
         {
-            round++;
-            time = 60;
-            score_needed += 200; 
-            InvokeRepeating("SCCountdownTimer", 1.0f, 1.0f); // Redémarrer le timer
-            Debug.Log("Round " + round + " started!");
+            launchDucks.SetActive(false);
+            if(Input.GetKeyDown(KeyCode.Q))
+            {
+                launchDucks.SetActive(true);
+                round++;
+                time = 10;
+                score_needed += 1; 
+                InvokeRepeating("SCCountdownTimer", 1.0f, 1.0f); // Redémarrer le timer
+                Debug.Log("Round " + round + " started!");
+            }
+            
         }
     }
 }

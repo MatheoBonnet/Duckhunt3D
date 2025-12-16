@@ -4,8 +4,17 @@ using System.Collections;
 
 public class launchDucks : MonoBehaviour
 {
-    public List<GameObject> spawnersList;
-    public float interval = 1f;
+    public static List<GameObject> spawnersList = new List<GameObject>();
+    public static bool active = true;
+    public static float interval = 1f;
+    public static launchDucks instance;
+    private Coroutine currentCoroutine;
+    
+    void Awake()
+    {
+        instance = this;
+        spawnersList.Clear(); // Nettoyer la liste au cas où
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,15 +34,30 @@ public class launchDucks : MonoBehaviour
         
     }
 
-    IEnumerator launchRandom()
+    static IEnumerator launchRandom()
     {
-        while (true)
+        while (active)
         {
             int choosedIndex = Random.Range(0,spawnersList.Count);
             Spawner spawnerScript = spawnersList[choosedIndex].GetComponent<Spawner>();
             spawnerScript.launch();
             yield return new WaitForSeconds(interval);
         }
+        yield break;
+    }
+    public static void SetActive(bool state)
+    {
+        active = state;
         
+        if (instance == null) return;
+        
+        // Toujours arrêter la coroutine en cours
+        instance.StopAllCoroutines();
+        
+        // Relancer seulement si on active
+        if (state)
+        {
+            instance.StartCoroutine(launchRandom());
+        }
     }
 }
