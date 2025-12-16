@@ -3,12 +3,13 @@ using UnityEngine.UI;
 
 public class Game : MonoBehaviour
 {
-    private float time = 5f;
-    int round = 60;
-    int score_needed = 120;
+    public float time = 5f;
+    int round = 0;
+    int score_needed = 20;
     bool phase_jeu = true;
     
     public Text timeUI; 
+    public Text roundUI; 
     
     void Start()
     {
@@ -24,8 +25,10 @@ public class Game : MonoBehaviour
         }
         if (timeUI != null)
         {
-            timeUI.text = "Time: " + Mathf.CeilToInt(time).ToString();
+            timeUI.text = "Time : " + Mathf.CeilToInt(time).ToString();
         }
+
+        roundUI.text = "Round : " + round.ToString();
     }
     
     void SCCountdownTimer()
