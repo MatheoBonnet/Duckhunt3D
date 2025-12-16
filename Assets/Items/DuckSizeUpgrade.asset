@@ -15,5 +15,5 @@ MonoBehaviour:
   nomItem: Duck Size Upgrade
   description: 
   bonusSats:
-  - statConcernee: 4
+  - statConcernee: 5
     valeur: 100

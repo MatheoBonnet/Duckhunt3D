@@ -27,6 +27,7 @@ public class DuckController : MonoBehaviour
 
         bonusSize = inventory.GetBonusTotal(StatType.duckSize);
         transform.localScale += new Vector3(bonusSize, bonusSize, bonusSize);
+        Debug.Log(transform.localScale);
 
         bonusScoreReward = inventory.GetBonusTotal(StatType.duckScoreReward);
         realScoreReward = baseScoreReward + bonusScoreReward;

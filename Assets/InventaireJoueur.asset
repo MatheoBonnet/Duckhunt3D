@@ -12,4 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9cc2cf6084eb677b3fe47bbb010293, type: 3}
   m_Name: InventaireJoueur
   m_EditorClassIdentifier: 
-  itemsPossedes: []
+  itemsPossedes:
+  - {fileID: 11400000, guid: 5e2cc2a4402d9775aaab4b5c4da4d81d, type: 2}
+  - {fileID: 11400000, guid: 5e2cc2a4402d9775aaab4b5c4da4d81d, type: 2}
+  - {fileID: 11400000, guid: 5e2cc2a4402d9775aaab4b5c4da4d81d, type: 2}
+  - {fileID: 11400000, guid: 5e2cc2a4402d9775aaab4b5c4da4d81d, type: 2}
+  - {fileID: 11400000, guid: 5e2cc2a4402d9775aaab4b5c4da4d81d, type: 2}
+  - {fileID: 11400000, guid: 5e2cc2a4402d9775aaab4b5c4da4d81d, type: 2}
+  - {fileID: 11400000, guid: 5e2cc2a4402d9775aaab4b5c4da4d81d, type: 2}
+  - {fileID: 11400000, guid: 5e2cc2a4402d9775aaab4b5c4da4d81d, type: 2}
+  - {fileID: 11400000, guid: 5e2cc2a4402d9775aaab4b5c4da4d81d, type: 2}
+  - {fileID: 11400000, guid: 5e2cc2a4402d9775aaab4b5c4da4d81d, type: 2}
+  - {fileID: 11400000, guid: 5e2cc2a4402d9775aaab4b5c4da4d81d, type: 2}
+  - {fileID: 11400000, guid: 5e2cc2a4402d9775aaab4b5c4da4d81d, type: 2}
+  - {fileID: 11400000, guid: 5e2cc2a4402d9775aaab4b5c4da4d81d, type: 2}
+  - {fileID: 11400000, guid: 5e2cc2a4402d9775aaab4b5c4da4d81d, type: 2}
+  - {fileID: 11400000, guid: 5e2cc2a4402d9775aaab4b5c4da4d81d, type: 2}
+  - {fileID: 11400000, guid: 5e2cc2a4402d9775aaab4b5c4da4d81d, type: 2}

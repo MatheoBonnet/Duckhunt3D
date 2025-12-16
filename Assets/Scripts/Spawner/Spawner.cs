@@ -31,7 +31,7 @@ public class Spawner : MonoBehaviour
         }
         Quaternion rotation = Quaternion.Euler(-90,-90,0);
         // Quaternion rotation = transform.rotation;
-        GameObject duckInstance = Instantiate(duck, transform.position + new Vector3(0,2,0), rotation);
+        GameObject duckInstance = Instantiate(duck, transform.position + new Vector3(0,3,0), rotation);
         duckInstance.GetComponent<Rigidbody>().AddForce(new Vector3(xForce, 1000, 0));
     }
 }
