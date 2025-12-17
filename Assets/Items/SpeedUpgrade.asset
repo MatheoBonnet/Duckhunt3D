@@ -16,4 +16,4 @@ MonoBehaviour:
   description: 
   bonusSats:
   - statConcernee: 2
-    valeur: 10
+    valeur: 5

@@ -2471,8 +2471,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89160276143eaca71b5464f42fd9678c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnersList: []
-  interval: 1
 --- !u!4 &710688337
 Transform:
   m_ObjectHideFlags: 0
@@ -5280,7 +5278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a6bc32c64f4b9419795b487b82cecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 30
+  time: 10
   timeUI: {fileID: 1835357568}
   roundUI: {fileID: 1213452756}
 --- !u!4 &1546375676

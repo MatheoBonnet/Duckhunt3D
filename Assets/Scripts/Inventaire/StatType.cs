@@ -2,16 +2,15 @@
 public enum StatType
 {
     // stats du joueur
-    damage,
+    damage, 
     shootDelay, // delai entre les tirs du joueur
     speed, // test
-    money,
     
     
     // autres stats (canards,...)
     spawnInterval, 
     duckSize, 
-    duckScoreReward, // score que donne un canard
-    duckMoneyReward,
-    duckHealth
+    duckScoreReward, // score que donne un canard 
+    duckMoneyReward, 
+    duckHealth 
 }

@@ -5,7 +5,7 @@ public class Game : MonoBehaviour
 {
     public float time = 5f;
     int round = 1;
-    int score_needed = 0;
+    int score_needed = 10;
     
     public Text timeUI; 
     public Text roundUI; 
@@ -56,6 +56,8 @@ public class Game : MonoBehaviour
                 round++;
                 time = 10;
                 score_needed += 1; 
+                launchDucks.interval *= 0.9f;
+                DuckController.baseMaxHealth += 5;
                 InvokeRepeating("SCCountdownTimer", 1.0f, 1.0f); // Redémarrer le timer
                 Debug.Log("Round " + round + " started!");
             }

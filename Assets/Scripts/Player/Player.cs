@@ -105,7 +105,7 @@ public class Player : MonoBehaviour
     public float bonusShootDelay, realShootDelay;
 
     public static float score, maxScore;
-    public static float money = 10f;
+    public static float money = 1000f;
     public Canvas playerUI;
     private static Text scoreUI;
     private static Text maxScoreUI;

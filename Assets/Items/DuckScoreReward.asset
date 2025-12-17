@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad9cc2cf6084eb677b3fe47bbb010293, type: 3}
-  m_Name: InventaireJoueur
+  m_Script: {fileID: 11500000, guid: 4d29318eca61f40ed814a3240ab61e6b, type: 3}
+  m_Name: DuckScoreReward
   m_EditorClassIdentifier: 
-  itemsPossedes:
-  - {fileID: 11400000, guid: 3b6a58f838d0411b68fbaa3b2f197a62, type: 2}
+  nomItem: duckScoreReward
+  description: 
+  bonusSats:
+  - statConcernee: 5
+    valeur: 5

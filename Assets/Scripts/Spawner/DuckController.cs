@@ -3,7 +3,7 @@ using UnityEngine;
 public class DuckController : MonoBehaviour
 {
     public float baseSize;
-    public int baseMaxHealth = 10;
+    public static int baseMaxHealth = 10;
     private float currentHealth;
 
     private float bonusHealth, bonusSize, realMaxHealth, realSize;
@@ -32,7 +32,7 @@ public class DuckController : MonoBehaviour
         bonusScoreReward = inventory.GetBonusTotal(StatType.duckScoreReward);
         realScoreReward = baseScoreReward + bonusScoreReward;
 
-        bonusScoreReward = inventory.GetBonusTotal(StatType.duckMoneyReward);
+        bonusMoneyReward = inventory.GetBonusTotal(StatType.duckMoneyReward);
         realMoneyReward = baseMoneyReward + bonusMoneyReward;
         
     }
